@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">      
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper amber">
+            <a href="index.html" class="brand-logo center">JavaScript</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Полотно. Засоби малювання</h1>   
+        <div>
+            Основу для створення складних зображень дає елемент &lt;canvas&gt; — полотно. З урахуванням особливості DOM — перезбирати весь документ після довільної зміни — полотна надають покращені можливості створення динамічного контенту.
+        </div>
+        <canvas id="figure"></canvas>
+        <div>
+            Лінії. Ідея малювання ліній полягає у комбінації двох операцій — переміщення "каретки" без сліду, та переміщення зі слідом.
+            <div class="row color-control-panel">
+                <div class="col s2">
+                    <label for="line-1-color">Лінія 1</label>
+                    <input type="color" id="line-1-color">
+                </div>
+                <!--<button class="btn btn-flat indigo white-text" id="line-1-button">Намалювати лінію</button>-->
+                <div class="col s2">
+                    <label for="line-2-color">Лінія 2</label>
+                    <input type="color" id="line-2-color">
+                </div>
+                <!--<button class="btn btn-flat indigo lighten-3 white-text" id="line-2-button">Намалювати лінію</button>-->
+                <div class="col s2">
+                    <label for="cos-color">Косинус</label>
+                    <input type="color" id="cos-color">
+                </div>
+                <!--<button class="btn btn-flat teal white-text" id="cos-button">Намалювати косинус</button>-->
+            </div>
+            За замовчанням розмір полотна 300 х 150 пікселів. При цьому важливо розуміти, що є розміри, а є роздільна здатність. Якщо стилями змінити ромір полотна, то його роздільна здатність не зміниться, при збільшенні проявиться піксельна структура. <br>
+            <button class="btn btn-flat green accent-3 white-text" id="expand-button">Збільшити розмір</button>
+            <button class="btn btn-flat deep-orange lighten-3 white-text" id="resolute-button">Збільшити роздільну здатність</button> 
+        </div>
+    </div>
+    <hr>
+    <div class="exchange-rates">
+        <h2>Курси валют</h2>
+        <button class="btn btn-flat blue-grey lighten-4" id="clear-rates">Стерти</button>
+    </div>
+    <div class="row">
+        <div class="col s3" id="assets-block">
+            <a href="#1" class="btn btn-flat rate-button green lighten-3" id="asset">Bitcoin</a>
+            <a href="#1" class="btn btn-flat rate-button green lighten-3" id="asset">Bitcoin</a>
+            <a href="#1" class="btn btn-flat rate-button green lighten-3" id="asset">Bitcoin</a>
+        </div>
+        <div class="col s9">
+            <canvas id="rates-canvas"></canvas>
+        </div>
+    </div>
+    <h2>Кешування (збереження) даних</h2>
+    <ul>
+        <li>Зменшення трафіку</li>
+        <li>Автономність (можливість роботи без Інтернету)</li>
+        <li>Збереження налаштувань</li>
+    </ul>
+    <p>
+        У JavaScript у бразері є ряд обмежень, зокрема, доступ до файлової системи. Для задач збереженння даних браузер надає декілька засобів, доступних для перегляду у вкладці "Application" інструментів розробника (консолі):
+    </p>
+    <ul>
+        <li>Local Storage — постійне сховище. Тримає значення, що доступне всім вкладкам, в яких відкрито дану сторінку. Відновлює значення після закриття вкладки і навіть браузера.</li>
+        <li>Session Storage — тимчасове сховище. Значення доступне лише даній вкладці. Закриття вкладки руйнує занчення. При оновленні сторінки значення зберігається.</li>
+        <li>Indexed DB — для великих даних типу "ключ-значення"</li>
+    </ul>
+    <div>
+        <div class="row">
+            <div class="col s1">
+                <span id="local-period"></span>
+            </div>
+            <div class="input-field col s5">
+                <input id="local-input">
+            </div>
+            <div class="col s4">
+                <button class="btn" id="local-save">Зберегти у Local Storage</button>
+            </div>
+            <div class="col s2">
+                <button class="btn pink white-text" id="local-delete">Видалити</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s1">
+                <span id="session-period"></span>
+            </div>
+            <div class="input-field col s5">
+                <input id="session-input">
+                <input type="time" id="session-timer"/>
+            </div>
+            <div class="col s4">
+                <button class="btn" id="session-save">Зберегти у Session Storage</button>
+            </div>
+            <div class="col s2">
+                <button class="btn pink white-text" id="session-delete">Видалити</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="canvas.js"></script>
+</body>
+</html>

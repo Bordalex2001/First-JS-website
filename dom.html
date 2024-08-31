@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        div{
+            border: 1px solid gray;
+            display: inline-block;
+            padding: 7px 12px;
+        }
+        b{
+            margin: 0 5px;
+        }
+        input{
+            width: 150px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Object Model (DOM)</h1>
+    <p>
+        DOM — концепція, згідно з якої всі елементи відображаються на об'єкті (ООП) JS. Причому це відображення двобічне: зміна HTML відбивається на структурі об'єктів, а зміна структури об'єктів — на HTML. Іншими словами, немає різниці як маніпулювати сторінкою — через вплив на HTML чи шляхом зміни об'єктів (та їх колекцій).
+    </p>
+    <form>
+        <label>Ім'я:     <input id="user-name"/></label><br>
+        <label>Прізвище: <input id="user-surname"/></label><br>
+        <button type="button" onclick="helloClick()">Say hello</button>
+    </form>
+    <p id="out-block"></p>
+    <!--<div>
+        <button type="button" id="decrement-button1">--</button>
+        <b id="calc-value1">10</b>
+        <button type="button" id="increment-button1">++</button>
+    </div><br>
+    <div>
+        <button type="button" id="decrement-button2">--</button>
+        <b id="calc-value2">10</b>
+        <button type="button" id="increment-button2">++</button>
+    </div>-->
+    <script src="dom.js"></script>
+</body>
+</html>

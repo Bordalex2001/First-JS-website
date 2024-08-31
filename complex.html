@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex</title>
+    <link rel="stylesheet" href="complex.css">
+</head>
+<body>
+    <h1>Комплексні типи даних: масиви та об'єкти</h1>
+    <h2>Об'єкти</h2>
+    <p>
+        Об'єкти JS можуть змінювати свій склад протягом роботи програми.
+    </p>
+    <div class="complex-forms">
+        <div>
+            <h3>Наявні поля об'єкту</h3>
+            <div id="current-fields"></div>
+        </div>
+        <div>
+            <h3>Додати нове поле</h3>
+            <label><input id="add-field-name" placeholder="name"/></label>  
+            <label><input id="add-field-value" placeholder="value"/></label>
+            <button id="add-field-button" type="button">Додати</button>
+        </div>
+    </div>
+    <div class="users-block">
+        <div id="registered-users"></div>
+        <label><input type="text" placeholder="name"></label>
+        <label><input type="text" placeholder="surname"></label>
+        <button type="button">Зареєструвати</button>
+    </div>
+    <script src="complex.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+#figure{
+    border: 1px solid gray;
+    float: right;
+}
+#rates-canvas{
+    border: 1px solid gray;
+    width: 100%;
+}
+.rate-button{
+    display: block;
+    margin: 5px 0;
+}
+.color-control-panel{
+    height: 30px;
+    margin: auto;
+}
+.color-control-panel label{
+    font-size: 15px;
+}
+.exchange-rates{
+    display: flex; 
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 10px;
+}

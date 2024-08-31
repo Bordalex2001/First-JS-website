@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форми</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">      
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+    <link rel="stylesheet" href="forms.css" />
+</head>
+<body>
+    <h1>Форми. Валідація даних форм</h1>
+    
+    <div class="row">
+        <h3>Форма реєстрації користувача</h3>
+        <form class="col s9" method="post">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate" name="user-name">
+              <label for="icon_prefix">Ім'я</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Прізвище, ім'я</span>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="tel" class="validate" name="user-phone">
+              <label for="icon_telephone">Телефон</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Мобільний телефон</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">lock</i>
+              <input id="icon_password" class="validate" name="user-password" type="password">
+              <label for="icon_password">Пароль</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Придумайте пароль</span>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">lock_open</i>
+              <input id="icon_repeat" class="validate" name="user-repeat" type="password">
+              <label for="icon_repeat">Повторіть пароль</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Повторіть уведенний пароль</span>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">mail</i>
+              <input  id="icon_email" class="validate" name="user-email" type="email">
+              <label for="icon_email">Пошта</label>
+              <span class="helper-text" data-error="wrong" data-success="right">Адреса електронної пошти</span>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">cake</i>
+              <input  id="icon_birthdate" class="validate" name="user-birthdate" type="date">
+              <label for="icon_birthdate">Дата народження</label>
+              <span class="helper-text" data-error="wrong" data-success="right">День, місяць та рік народження</span>
+            </div>
+          </div>
+
+          <button class="btn blue lighten-1">Реєстрація</button>
+        </form>
+      </div>
+    <h2>Форми</h2>
+    <p>
+        Форми (зворотнього зв'язку) - засоби HTML, які дозволяють
+        вводити дані користувачем та передавати їх на сервер сайту. 
+    </p>
+    <p>
+        На сторінці може бути декілька форм. Вони відокремлюються тегами
+        &lt;form>&lt;/form>. Якщо надсилається одна форма, то елементи
+        інших форм ігноруються. Елементи, що знаходяться у формі, 
+        надсилаються за умов:
+    </p>
+    <ul>
+        <li>це елементи з тегами &lt;input> &lt;button> &lt;select> &lt;textarea></li>
+        <li>елемент має атрибут "name" </li>
+    </ul>
+    <p>
+        Дані форм можуть передаватись методами GET та POST. При методі POST
+        дані вкладаються у тіло запиту, при методі GET - в адресний рядок (URL). 
+        В URL адреса та дані розділяються знаком "?". Дані між собою розділяються
+        знаком "&". 
+        forms.html ? user-name=admin & user-password=123
+    </p>
+    <p>
+        З точки зору JS надсилання форми супроводжується подією "submit"
+        у документі. Для впливу на процес надсилання даних необхідно 
+        додати обробник цієї події. Але просте додавання обробника не 
+        зупинить надсилання форми, для його скасування необхідно 
+        додати команду e.preventDefault(); 
+    </p>
+    <h2>Валідація</h2>
+    <p>
+        Валідація - це процедура перевірки даних за певними ознаками чи
+        шаблонами (email - має містити @, телефон - складатись лише з цифр,...)
+
+    </p>
+    <form>
+        <label>Ім'я:   
+            <input type="text"  />
+            <span class="error-message"></span>
+        </label><br/>
+        <br/>
+        <label>Пароль: 
+          <input type="password" />
+          <span class="error-message"></span>
+        </label><br/>
+        <br/>
+    </form>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="forms.js"></script>
+</body>
+</html>

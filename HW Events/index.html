@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Events</h1>
+    <h2>Task 1</h2>
+    <div class="task1">
+        <label for="enterName">Enter your name (name can't contain digits):</label>
+        <input type="text" id="enterName" placeholder="Name, surname">
+    </div>
+    <h2>Task 2</h2>
+    <div class="task2">
+        <button id="openModal">Open modal window</button>
+        <div class="modal" id="modal">
+            <div class="background"></div>
+            <div class="content">
+                <b>Hello from Modal Window!</b>
+                <button id="closeModal">Close window</button>
+            </div>
+        </div>
+    </div>
+    <h2>Task 4</h2>
+    <div class="task4">
+        <div class="traffic-light">
+            <div class="circle" id="redLight"></div>
+            <div class="circle" id="yellowLight"></div>
+            <div class="circle" id="greenLight"></div>
+        </div>
+        <button id="nextBtn">Next</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
